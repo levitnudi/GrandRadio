@@ -164,14 +164,16 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     return WillPopScope(
         onWillPop: _onBackPressed,
         child: Scaffold(
+          resizeToAvoidBottomInset : false,
           body: list == null
               ? Center(child: CircularProgressIndicator())
-              : Stack(
+              :
+          Stack(
                   children: [
                     Header(),
                     SafeArea(
                         child: Column(
-                      children: [
+                          children: <Widget>[
                         kShowAd
                             ? Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -229,8 +231,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                     })
                               ]),
                         ),
-                        SizedBox(
-                          height: 120,
+                        FittedBox(
+                          fit:BoxFit.contain,
                           child: StreamBuilder(
                               stream: _flutterRadioPlayer.isPlayingStream,
                               initialData: playerState,

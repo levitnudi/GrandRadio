@@ -7,7 +7,7 @@ void main() {
   // Initialize without device test ids
   Admob.initialize();
   // Add a list of test ids.
-  Admob.initialize(testDeviceIds: ['7D5AC2477D3CDC47DF7D8145F5553D6E']);
+  //Admob.initialize(testDeviceIds: ['7D5AC2477D3CDC47DF7D8145F5553D6E']);
   // Run this before displaying any ad.
   Admob.requestTrackingAuthorization();
   runApp(RadioApp());

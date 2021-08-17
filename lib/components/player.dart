@@ -23,7 +23,10 @@ class PlayerController extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double size = isPlaying ? 80 : 90;
-    return Row(
+    return FittedBox(
+        fit: BoxFit.contain,
+        child:
+      Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -75,6 +78,6 @@ class PlayerController extends StatelessWidget {
             icon: Icon(Icons.arrow_forward),
             iconSize: 30,
           )
-        ]);
+        ]));
   }
 }

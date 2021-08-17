@@ -24,8 +24,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
           iconTheme: Theme.of(context).iconTheme,
           title: Text("Settings"),
         ),
-        body: Column(
-          children: [
+        body: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+        child: Column(
+    children: <Widget>[
             ListTile(
               leading: Icon(Icons.info_outline),
               title: Text("About us"),
@@ -69,7 +71,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             Text("Made with ♥️ in Newcastle, UK")
           ],
-        ));
+        )));
   }
 
   void _review() async {
