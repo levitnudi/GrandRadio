@@ -67,7 +67,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ListTile(
               leading: Icon(Icons.verified),
               title: Text("App Version"),
-              subtitle: Text("1.0.0"),
+              subtitle: Text("1.3.0"),
             ),
             Text("Made with ♥️ in Newcastle, UK")
           ],
