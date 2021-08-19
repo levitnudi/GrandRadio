@@ -67,7 +67,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ListTile(
               leading: Icon(Icons.verified),
               title: Text("App Version"),
-              subtitle: Text("1.5.0"),
+              subtitle: Text("1.6.0"),
             ),
             Text("Made with ♥️ in Newcastle, UK")
           ],
@@ -84,10 +84,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
     if (Platform.isAndroid) {
       Share.share('I am listening to COG $appname. Download the app here\n'
           'https://play.google.com/store/apps/details?id=$androidPackage&hl=en');
-    } else {
-      Share.share('I am listening to COG $appname. Download the app here\n'
-          '$iosPackage');
-    }
+    } else if(Platform.isIOS) {
+    final Size size = MediaQuery.of(context).size;
+    Share.share(
+      'I am listening to COG $appname. Download the app here\n'
+          '$iosPackage',
+    sharePositionOrigin: Rect.fromLTWH(0, 0, size.width, size.height / 2),
+    );
+
+  }
   }
 
   Future<void> _launchURL(String url) async {
